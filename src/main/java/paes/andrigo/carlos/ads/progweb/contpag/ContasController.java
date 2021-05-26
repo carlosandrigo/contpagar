@@ -29,7 +29,12 @@ public class ContasController {
         contas.setAno_vcto(ano_vcto);
         contasRepository.save(contas);
         
-        return null;
+        ModelAndView modelAndView = new ModelAndView("detalhes");
+        modelAndView.addObject("contas", contas);
+        
+        return modelAndView;
     }
+
+
 
 }
