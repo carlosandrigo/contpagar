@@ -3,28 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contas a Pagar - Nova Conta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Contas a Pagar - Nova Obrigação</title>
 </head>
 <body>
-    <h1>Contas a Pagar</h1>
-    
-    <form method="POST" action="/adicionar">
-        <label for="descricao">Descrição:</label>
-        <input type="text" name="descricao" id="descricao" />
-        
-        <label for="valor">Valor:</label>
-        <input type="text" name="valor" id="valor" />
-        
-        <label for="mes_vcto">Mês de Vencimento:</label>
-        <input type="text" name="mes_vcto" id="mes_vcto" />
-        
-        <label for="ano_vcto">Ano de Vencimento:</label>
-        <input type="text" name="ano_vcto" id="ano_vcto" />
-        
-        <input type="submit" value="Salvar" />
-    </form>
-
-    <a href="/">Voltar ao início</a>
+    <div class="container-fluid">
+        <h1>Contas a Pagar</h1>
+        <form method="POST" action="/adicionar">
+            <div class="form-row">
+                <div class="form-group col-md-9">
+                    <label for="descricao">Descrição:</label>
+                    <!-- <input type="text" name="descricao" id="descricao" th:value="${contas.descricao}" /> !-->
+                    <input type="text" class="form-control" name="descricao" id="descricao" th:value="${contas.descricao}" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="valor">Valor:</label>
+                    <!-- <input type="text" name="valor" id="valor" th:value="${contas.valor}"/>!-->
+                    <input type="text" class="form-control" name="valor" id="valor" th:value="${contas.valor}" />
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mes_vcto">Mês de Vencimento:</label>
+                    <!-- <input type="text" name="mes_vcto" id="mes_vcto" th:value="${contas.mes_vcto}" />!-->
+                    <!-- <input type="text" class="form-control" name="mes_vcto" id="mes_vcto" th:value="${contas.mes_vcto}" />!-->
+                    <select id="inputState" class="form-control" name="mes_vcto" th:value="${contas.mes_vcto}">
+                        <option selected>Escolha...</option>
+                        <option>Janeiro</option>                   
+                        <option>Fevereiro</option>
+                        <option>Março</option>
+                        <option>Abril</option>
+                        <option>Maio</option>
+                        <option>Junho</option>
+                        <option>Julho</option>
+                        <option>Agosto</option>
+                        <option>Setembro</option>
+                        <option>Outubro</option>
+                        <option>Novembro</option>
+                        <option>Dezembro</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="ano_vcto">Ano de Vencimento:</label>
+                    <!-- <input type="text" name="ano_vcto" id="ano_vcto" th:value="${contas.ano_vcto}"/>!-->
+                    <input type="text" class="form-control" name="ano_vcto" id="ano_vcto" th:value="${contas.ano_vcto}" />
+                </div>  
+                <input type="hidden" name="id" id="id" th:value="${contas.id}"/>
+            </div>
+            <input class="btn btn-success" type="submit" value="Salvar"/>
+            <a class="btn btn-primary" href="/" role="button">Voltar ao início</a>
+        </form>
+        <!--<input type="submit" value="Salvar" />!-->
+       
+        <!--<a href="/">Voltar ao início</a>!-->
+    </div>
 </body>
 </html>

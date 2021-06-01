@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Contas a Pagar</title>
 </head>
 <body>
-    <h1>Contas a Pagar</h1>
-
-    <ul>
-        <li>Descrição - Valor - Mês - Ano</li>
-        <li>Descrição - Valor - Mês - Ano</li>
-        <li>Descrição - Valor - Mês - Ano</li>
-        <li>Descrição - Valor - Mês - Ano</li>
-    </ul>
-
-    <a href="/cadastro">Nova Conta</a>
+    
+    <div class="container-fluid">
+        <h1>Contas a Pagar
+        <a class="btn btn-success" href="/cadastro" role="button">Nova Conta</a>
+        </h1>
+        <ul class="list-group list group-flush">
+            <li class="list-group-item" th:each="contas : ${lista}">
+                <a class="btn btn-warning" th:href="@{/detalhes/{id}(id=${contas.id})}" th:text="${contas.descricao}" role="button">descricao</a>
+                <!--<a th:href="@{/editar/{id}(id=${contas.id})}">Editar</a>!-->
+                <a class="btn btn-primary" th:href="@{/editar/{id}(id=${contas.id})}" role="button">Editar</a>
+                <a class="btn btn-danger"  th:href="@{/apagar/{id}(id=${contas.id})}" role="button">Apagar</a>
+            </li>
+        </ul>
+        <br>
+       
+    </div>
+        <!--<a href="/cadastro">Nova Conta</a>!-->
+       
 </body>
 </html>

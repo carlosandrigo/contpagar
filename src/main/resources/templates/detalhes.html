@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<title>Detalhe da obrigação</title> !-->
 </head>
 <body>
-    
-    <h1 th:text="${contas.descricao}"></h1>
+  <div class="container-fluid">
+    <h1>Detalhe da obrigação</h1>
+    <h2>Descrição</h2>    
+    <h2 th:text="${contas.descricao}"></h2>
+    <h2>Valor</h2>
     <h2 th:text="${contas.valor}"></h2>
+    <h2>Mês de Vencimento</h2>
     <h2 th:text="${contas.mes_vcto}"></h2>
+    <h2>Ano de Vencimento</h2>
     <h2 th:text="${contas.ano_vcto}"></h2>
 
-    <a href="/">Voltar ao início</a>
-
+        
+    <a class="btn btn-primary" href="/" role="button">Voltar ao início</a>
+  </div>
 </body>
 </html>

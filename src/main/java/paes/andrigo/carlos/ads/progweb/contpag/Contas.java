@@ -5,18 +5,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-// import lombok.Getter;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-// import lombok.Setter;
+import lombok.Setter;
 
 @Entity
-// @Getter
-// @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 
 public class Contas {
     
-    public Long getId() {
+   /* public Long getId() {
         return id;
     }
 
@@ -51,7 +51,7 @@ public class Contas {
     public void setValor(String valor) {
         this.valor = valor;
     }
-
+*/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
    
@@ -62,8 +62,8 @@ public class Contas {
     String ano_vcto;
     String valor;
    
-    public void setDescricao(String descricao) {
+   /* public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
+    } */
 
 }
